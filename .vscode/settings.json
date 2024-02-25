@@ -25,6 +25,7 @@
         { "icon": "template", "extensions": ["apps"] },
         { "icon": "paket", "extensions": ["containers"] },
         { "icon": "node", "extensions": ["node"] },
+        { "icon": "server", "extensions": ["servers"] },
     ],
     "vsicons.associations.files": [
         { "icon": "nginx", "extensions": ["docker/server/nginx/*"] },

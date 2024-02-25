@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  traefik:
+    image: traefik:v2.6
+    restart: unless-stopped
+    network_mode: host
+    command:
+      - --entrypoints.web.address=:80
+      - --providers.docker=true
+    ports:
+      - "80:80"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - /var/docker/traefik:/var/docker/traefik

@@ -1,0 +1,26 @@
+version: "3"
+services:
+
+  portainer:
+    image: portainer/portainer-ee:latest
+    ports:
+      - 9443:9443
+      - 8000:8000
+    volumes:
+      - portainer-data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/docker:/var/docker
+    restart: unless-stopped
+
+  # backup:
+  #   build: ./containers/backup
+  #   environment:
+  #     - RCLONE_S3_CONFIG="--auth-key ACCESS_KEY_ID,SECRET_ACCESS_KEY"
+  #   ports:
+  #     - 8303:8000
+  #   volumes:
+  #     - backup-data:/data
+
+volumes:
+  portainer-data:
+  # backup-data:
